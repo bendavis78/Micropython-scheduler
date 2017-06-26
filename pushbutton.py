@@ -2,7 +2,11 @@
 # Author: Peter Hinch
 # Copyright Peter Hinch 2016 Released under the MIT license
 
-import pyb
+from sys import platform
+if platform != 'pyb':
+    import machine as pyb
+else:
+    import pyb
 from usched import Sched, Timeout
 from delay import Delay
 
